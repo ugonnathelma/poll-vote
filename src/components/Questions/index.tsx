@@ -18,7 +18,10 @@ const Questions = () => {
   return (
     <>
       <Flex>
-        <h1>Questions</h1> <Link to="/create">Create New Question</Link>
+        <h1>Questions</h1>{" "}
+        <Link to="/create" data-testid="create-question-link">
+          Create New Question
+        </Link>
       </Flex>
       <Container>
         {loading ? (
@@ -26,7 +29,7 @@ const Questions = () => {
         ) : (
           questions.map(({ question, published_at, choices, url }, index) => {
             return (
-              <Link to={url} key={`${index}`}>
+              <Link to={url} key={`${index}`} data-testid="question-card">
                 <Question
                   question={question}
                   publishedAt={published_at}

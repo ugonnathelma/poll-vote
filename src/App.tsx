@@ -49,7 +49,7 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Body>
+      <Body data-testid="app-body">
         {isDisconnected ? (
           <h1>Oops! You are currently disconnected</h1>
         ) : (

@@ -49,7 +49,9 @@ const QuestionDetails = ({ match }: QuestionDetailsType) => {
               Question:{" "}
               {currentQuestion ? currentQuestion?.question : "does not exist"}
             </h1>{" "}
-            <Link to="/">Back to home</Link>
+            <Link to="/" data-testid="back-to-home-link">
+              Back to home
+            </Link>
           </Flex>
 
           {currentQuestion && (
@@ -58,10 +60,11 @@ const QuestionDetails = ({ match }: QuestionDetailsType) => {
                 const totalVotes = currentQuestion.totalVotes;
 
                 return (
-                  <Choice key={index}>
+                  <Choice key={index} data-testid="choice-item">
                     <span>{choice}</span>
                     <span>
-                      <b>Votes:</b> {votes}
+                      <b>Votes:</b>{" "}
+                      <span data-testid="vote-count">{votes}</span>
                     </span>
                     <span>
                       {totalVotes ? ((votes / totalVotes) * 100).toFixed(2) : 0}
@@ -69,6 +72,7 @@ const QuestionDetails = ({ match }: QuestionDetailsType) => {
                     </span>
                     <span>
                       <Button
+                        data-testid="vote-button"
                         fontSize="14px"
                         width="80px"
                         height="40px"

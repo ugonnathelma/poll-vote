@@ -66,12 +66,12 @@ const CreateQuestion = () => {
               onChange={handleTextChange}
             />
 
-            <label htmlFor="question-field">Choices:</label>
+            <label htmlFor="choices-field">Choices:</label>
             <TextField
               placeholder="Your choices separated by commas"
               autoFocus
-              data-testid="question-field"
-              name="question-field"
+              data-testid="choices-field"
+              name="choices-field"
               tabIndex={0}
               value={choicesValue}
               height={"50px"}

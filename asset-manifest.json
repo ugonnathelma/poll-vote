@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/poll-vote/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/poll-vote/static/js/main.9396085b.chunk.js",
-    "main.js.map": "/poll-vote/static/js/main.9396085b.chunk.js.map",
+    "main.js": "/poll-vote/static/js/main.75a77909.chunk.js",
+    "main.js.map": "/poll-vote/static/js/main.75a77909.chunk.js.map",
     "runtime-main.js": "/poll-vote/static/js/runtime-main.c3621f72.js",
     "runtime-main.js.map": "/poll-vote/static/js/runtime-main.c3621f72.js.map",
     "static/js/2.ab771d83.chunk.js": "/poll-vote/static/js/2.ab771d83.chunk.js",
     "static/js/2.ab771d83.chunk.js.map": "/poll-vote/static/js/2.ab771d83.chunk.js.map",
     "index.html": "/poll-vote/index.html",
-    "precache-manifest.8703c1d73b9a4acc8ebd805ac214d5d2.js": "/poll-vote/precache-manifest.8703c1d73b9a4acc8ebd805ac214d5d2.js",
+    "precache-manifest.be80cd4cf7fb5528d14ab600ab6bd780.js": "/poll-vote/precache-manifest.be80cd4cf7fb5528d14ab600ab6bd780.js",
     "service-worker.js": "/poll-vote/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/poll-vote/static/css/main.5ecd60fb.chunk.css.map",
     "static/js/2.ab771d83.chunk.js.LICENSE.txt": "/poll-vote/static/js/2.ab771d83.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.c3621f72.js",
     "static/js/2.ab771d83.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.9396085b.chunk.js"
+    "static/js/main.75a77909.chunk.js"
   ]
 }

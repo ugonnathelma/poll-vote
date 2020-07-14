@@ -35,6 +35,10 @@ const App = () => {
   useEffect(() => {
     window.addEventListener("online", handleConnection);
     window.addEventListener("offline", handleConnection);
+    return () => {
+      window.removeEventListener("online", handleConnection);
+      window.removeEventListener("offline", handleConnection);
+    };
   }, []);
 
   useEffect(() => {

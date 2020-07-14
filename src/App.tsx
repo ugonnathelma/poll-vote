@@ -10,10 +10,8 @@ import theme from "./theme";
 import { QuestionType } from "./common/types";
 
 import actions from "./actions";
-import getQuestions from "./lib/getQuestions";
 import CreateQuestion from "./components/CreateQuestion";
 import Snackbar from "./components/Snackbar";
-import { ERROR_MESSAGE } from "./constants";
 import { useState } from "react";
 
 export const DataContext = createContext<{

@@ -3,12 +3,14 @@ import {
   CREATE_QUESTION,
   SET_CREATING_QUESTION,
   VOTE_CHOICE,
+  SET_VOTING,
 } from "../constants";
 import { ReducerAction, QuestionType } from "../common/types";
 
 const initialState = {
   questions: [],
   creating: false,
+  voting: false,
 };
 
 export default function appReducer(
@@ -49,6 +51,8 @@ export default function appReducer(
       };
     case SET_CREATING_QUESTION:
       return { ...state, creating: action.payload };
+    case SET_VOTING:
+      return { ...state, voting: action.payload };
     default:
       return state;
   }

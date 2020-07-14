@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { Container, Choice } from "./styles";
 import Loader from "../atoms/Loader";
-import postChoice from "../../lib/postChoice";
 import actions from "../../actions";
 import { Flex } from "../../styles";
 import { DefaultRootState } from "../../common/types";
-import { ERROR_MESSAGE } from "../../constants";
+import Button from "../atoms/Button";
 
 type QuestionDetailsType = {
   match?: {
@@ -17,12 +16,15 @@ type QuestionDetailsType = {
 };
 
 const QuestionDetails = ({ match }: QuestionDetailsType) => {
-  const { questions } = useSelector(
+  const { questions, voting } = useSelector(
     (state: DefaultRootState) => state.questionReducer
   );
   const { loading } = useSelector(
     (state: DefaultRootState) => state.appReducer
   );
+
+  const [selectedChoice, setSelectedChoice] = useState("");
+
   const dispatch = useDispatch();
 
   const id = match?.params.id;
@@ -32,17 +34,8 @@ const QuestionDetails = ({ match }: QuestionDetailsType) => {
     : null;
 
   const voteForChoice = async (url: string) => {
-    const response = await postChoice(url);
-    response
-      ? currentQuestion &&
-        dispatch(actions.voteChoice(currentQuestion.url, url))
-      : dispatch(
-          actions.setNotification({
-            type: "error",
-            message: ERROR_MESSAGE,
-            hide: false,
-          })
-        );
+    setSelectedChoice(url);
+    currentQuestion && dispatch(actions.voteChoice(currentQuestion, url));
   };
 
   return (
@@ -75,7 +68,14 @@ const QuestionDetails = ({ match }: QuestionDetailsType) => {
                       %
                     </span>
                     <span>
-                      <button onClick={() => voteForChoice(url)}>Vote</button>
+                      <Button
+                        fontSize="14px"
+                        width="80px"
+                        height="40px"
+                        onClick={() => voteForChoice(url)}
+                      >
+                        {voting && selectedChoice === url ? "Voting" : "Vote"}
+                      </Button>
                     </span>
                   </Choice>
                 );

@@ -7,10 +7,8 @@ import actions from "../../actions";
 import { Flex } from "../../styles";
 import TextField from "../atoms/TextField";
 import Button from "../atoms/Button";
-import createQuestion from "../../lib/createQuestion";
 import Loader from "../atoms/Loader";
 import { DefaultRootState } from "../../common/types";
-import { ERROR_MESSAGE } from "../../constants";
 
 const CreateQuestion = () => {
   const { creating } = useSelector(
@@ -28,38 +26,17 @@ const CreateQuestion = () => {
     setQuestionValue(target.value);
   };
 
-  const handlechoicesChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
+  const handleChoicesChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
     setchoicesValue(target.value);
   };
 
-  const showNotification = (response: boolean) => {
-    response
-      ? dispatch(
-          actions.setNotification({
-            type: "success",
-            message: "Question was created successfully",
-            hide: false,
-          })
-        )
-      : dispatch(
-          actions.setNotification({
-            type: "error",
-            message: ERROR_MESSAGE,
-            hide: false,
-          })
-        );
-  };
-
   const submitQuestion = async () => {
-    dispatch(actions.setCreatingQuestion(true));
-    const response = await createQuestion({
-      question: questionValue,
-      choices: choicesValue.split(","),
-    });
-
-    dispatch(actions.createQuestion(response));
-    dispatch(actions.setCreatingQuestion(false));
-    showNotification(response);
+    dispatch(
+      actions.newQuestion({
+        question: questionValue,
+        choices: choicesValue.split(","),
+      })
+    );
   };
 
   const canSubmit =
@@ -99,7 +76,7 @@ const CreateQuestion = () => {
               value={choicesValue}
               height={"50px"}
               fontSize="20px"
-              onChange={handlechoicesChange}
+              onChange={handleChoicesChange}
             />
 
             <Button

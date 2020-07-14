@@ -12,15 +12,6 @@ export const Choice = styled.div`
   align-items: center;
   padding: 1em;
 
-  button {
-    cursor: pointer;
-    background: ${({ theme: { colors } }) => colors.primary};
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 1em;
-  }
-
   & > span:first-child {
     flex: 3;
     font-size: 20px;

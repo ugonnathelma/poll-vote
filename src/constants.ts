@@ -7,5 +7,6 @@ export const SET_LOADING = "SET_LOADING";
 export const VOTE_CHOICE = "VOTE_CHOICE";
 export const SET_NOTIFICATION = "SET_NOTIFICATION";
 export const SET_CREATING_QUESTION = "SET_CREATING_QUESTION";
+export const SET_VOTING = "SET_VOTING";
 
 export const ERROR_MESSAGE = "Something went wrong. Try again!";

@@ -21,7 +21,6 @@ export default function appReducer(
       return {
         ...state,
         notification: {
-          ...state.notification,
           ...action.payload,
         },
       };

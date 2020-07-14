@@ -1,4 +1,4 @@
-type NewQuestionType = { question: string; choices: string[] };
+import { NewQuestionType } from "../common/types";
 
 export default async ({ question, choices }: NewQuestionType) => {
   const response = await fetch(`https://polls.apiblueprint.org/questions?`, {

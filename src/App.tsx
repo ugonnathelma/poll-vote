@@ -43,22 +43,7 @@ const App = () => {
 
   useEffect(() => {
     const getData = async () => {
-      dispatch(await actions.setLoading(true));
-      const questions = await getQuestions();
-
-      if (questions) {
-        dispatch(await actions.setQuestions(questions));
-      } else {
-        dispatch(
-          actions.setNotification({
-            type: "error",
-            message: ERROR_MESSAGE,
-            hide: false,
-          })
-        );
-      }
-
-      dispatch(await actions.setLoading(false));
+      dispatch(await actions.loadQuestions());
     };
 
     getData();

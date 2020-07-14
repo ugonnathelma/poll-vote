@@ -14,8 +14,8 @@ const Snackbar = () => {
   useEffect(() => {
     setTimeout(() => {
       dispatch(actions.setNotification({ ...notification, hide: true }));
-    }, 5000);
-  }, [dispatch, notification, notification.hide]);
+    }, 7000);
+  }, [dispatch, notification]);
 
   return (
     <Bar type={notification.type} hide={notification.hide}>

@@ -10,6 +10,8 @@ export type QuestionType = {
   }[];
 };
 
+export type NewQuestionType = { question: string; choices: string[] };
+
 export type NotificationType = {
   type: string | null;
   message: string | null;
@@ -28,6 +30,7 @@ export type DefaultRootState = {
   questionReducer: {
     questions: QuestionType[];
     creating: boolean;
+    voting: boolean;
   };
 };
 
